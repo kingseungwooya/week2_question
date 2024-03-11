@@ -33,13 +33,13 @@ class PriorityQueue:
       left_child_index = 2 * index + 1
       right_child_index = 2 * index + 2
       smallest = index
-
+      # 최소 힙에서는 부모 노드가 항상 자식 노드보다 작아야 한다.
       if left_child_index < len(self.heap) and \
-        self.heap[left_child_index][0] > self.heap[smallest][0]:
+        self.heap[left_child_index][0] < self.heap[smallest][0]:
         smallest = left_child_index
 
       if right_child_index < len(self.heap) and \
-        self.heap[right_child_index][0] > self.heap[smallest][0]:
+        self.heap[right_child_index][0] < self.heap[smallest][0]:
         smallest = right_child_index
 
       if smallest != index:
